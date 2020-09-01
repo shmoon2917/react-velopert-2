@@ -8,23 +8,23 @@ const reducer = (state, action) => {
   switch (action.type) {
     case LOADING: {
       return {
-        loading: true,
         data: null,
         error: null,
+        isLoading: true,
       };
     }
     case SUCCESS: {
       return {
         ...state,
-        loading: false,
         data: action.data,
+        isLoading: false,
       };
     }
     case ERROR: {
       return {
         ...state,
-        loading: false,
         error: action.error,
+        isLoading: false,
       };
     }
     default:
@@ -34,7 +34,7 @@ const reducer = (state, action) => {
 
 const useAsync = (callback, deps = [], skip = false) => {
   const [state, dispatch] = useReducer(reducer, {
-    loading: false,
+    isLoading: false,
     data: null,
     error: null,
   });
