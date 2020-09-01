@@ -1,44 +1,29 @@
-/* 액션 타입 만들기 */
-// Ducks 패턴을 따를땐 액션의 이름에 접두사를 넣어주세요.
-// 이렇게 하면 다른 모듈과 액션 이름이 중복되는 것을 방지 할 수 있습니다.
-const SET_DIFF = "counter/SET_DIFF";
-const INCREASE = "counter/INCREASE";
-const DECREASE = "counter/DECREASE";
+// 액션 타입
+const INCREASE = "INCREASE";
+const DECREASE = "DECREASE";
 
-/* 액션 생성함수 만들기 */
-// 액션 생성함수를 만들고 export 키워드를 사용해서 내보내주세요.
-export const setDiff = (diff) => ({ type: SET_DIFF, diff });
+// 액션 생성 함수
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
 
-/* 초기 상태 선언 */
-const initialState = {
-  number: 0,
-  diff: 1,
+// thunk 함수(getState를 쓰지 않는다면 굳이 파라미터로 받아올 필요는 없습니다.)
+export const increaseAsync = () => (dispatch) => {
+  setTimeout(() => dispatch(increase()), 1000);
+};
+export const decreaseAsync = () => (dispatch) => {
+  setTimeout(() => dispatch(decrease()), 1000);
 };
 
-/* 리듀서 선언 */
-// 리듀서는 export default 로 내보내주세요.
-const counter = (state = initialState, action) => {
+// 초깃값 (상태가 객체가 아니라 그냥 숫자여도 상관 없습니다.)
+const initialState = 0;
+
+export default function counter(state = initialState, action) {
   switch (action.type) {
-    case SET_DIFF:
-      return {
-        ...state,
-        diff: action.diff,
-      };
     case INCREASE:
-      return {
-        ...state,
-        number: state.number + state.diff,
-      };
+      return state + 1;
     case DECREASE:
-      return {
-        ...state,
-        number: state.number - state.diff,
-      };
+      return state - 1;
     default:
       return state;
   }
-};
-
-export default counter;
+}
