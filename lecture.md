@@ -29,3 +29,11 @@ https://yeun.github.io/open-color/
 ### 4-2. useReducer 로 요청 상태 관리하기
 
 - `useState` 대신에 `useReducer` 를 사용하여 요청 상태들을 관리하려 함.
+
+---
+
+# 6장. Redux
+
+### 6-4. 리덕스 모듈 만들기
+
+- (Ducks 패턴) https://github.com/erikras/ducks-modular-redux

@@ -1,12 +1,10 @@
-import React from 'react';
-import Users from './ch4(review)/Users';
-import { UsersProvider } from './ch4(review)/UsersContext';
+import React from "react";
 
 const App = () => {
   return (
-    <UsersProvider>
-      <Users />
-    </UsersProvider>
+    <div>
+      hello world
+    </div>
   );
 };
 
