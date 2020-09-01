@@ -1,28 +1,26 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import User from './User';
-import { useAsync } from 'react-async';
-
-const getUsers = async () => {
-  const response = await axios.get(
-    'https://jsonplaceholder.typicode.com/users'
-  );
-  return response.data;
-};
+import { useUsersState, useUsersDispatch, getUsers } from './UsersContext';
 
 const Users = () => {
   const [userId, setUserId] = useState(null);
-  const { data: users, error, isLoading, reload } = useAsync({
-    promiseFn: getUsers,
-  });
+  const state = useUsersState();
+  const dispatch = useUsersDispatch();
 
-  const onClickUser = (id) => () => {
-    setUserId(id);
-  };
+  const { data: users, error, loading } = state.users;
+
+  const fetchData = () => getUsers(dispatch);
+
+  const onClickUser = (id) => () => setUserId(id);
+
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line
+  }, []);
 
   if (error) return <div>에러가 발생했습니다</div>;
-  if (isLoading) return <div>로딩중...</div>;
-  if (!users) return <button onClick={reload}>불러오기</button>;
+  if (loading) return <div>로딩중...</div>;
+  if (!users) return <button onClick={fetchData}>불러오기</button>;
 
   return (
     <>
@@ -37,7 +35,7 @@ const Users = () => {
           </li>
         ))}
       </ul>
-      <button onClick={reload}>다시 불러오기</button>
+      <button onClick={fetchData}>다시 불러오기</button>
       {userId && <User id={userId} />}
     </>
   );

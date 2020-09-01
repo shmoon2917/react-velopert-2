@@ -1,10 +1,13 @@
 import React from 'react';
 import Users from './ch4(review)/Users';
-// import Users from './Users';
-// import { UsersProvider } from './UsersContext';
+import { UsersProvider } from './ch4(review)/UsersContext';
 
 const App = () => {
-  return <Users />;
+  return (
+    <UsersProvider>
+      <Users />
+    </UsersProvider>
+  );
 };
 
 export default App;
