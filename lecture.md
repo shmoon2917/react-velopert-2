@@ -37,3 +37,15 @@ https://yeun.github.io/open-color/
 ### 6-4. 리덕스 모듈 만들기
 
 - (Ducks 패턴) https://github.com/erikras/ducks-modular-redux
+
+---
+
+# 7장. Redux middleware
+
+### 7-7. thunk 에서 라우터 연동하기
+
+- 왜 Router 에서만 가능한가. BrowserRouter에서는 왜 history props 로 넘겨서 작동하지 않는가
+
+### 7-9. CORS 와 Webpack Devserver Proxy
+
+- 이해가 부족함

@@ -17,7 +17,7 @@ const sagaMiddleware = createSagaMiddleware({
   context: {
     history: customHistory,
   },
-}); // 사가 미들웨어를 만듭니다.
+});
 
 const store = createStore(
   rootReducer,
@@ -28,8 +28,6 @@ const store = createStore(
   )
 );
 
-// 루트 사가를 실행해줍니다.
-// 주의: 스토어 생성이 된 다음에 위 코드를 실행해야합니다.
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
