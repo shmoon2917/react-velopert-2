@@ -49,3 +49,38 @@ https://yeun.github.io/open-color/
 ### 7-9. CORS 와 Webpack Devserver Proxy
 
 - 이해가 부족함
+
+---
+
+# 8장. Typescript 사용하기
+
+### 8-1. 타입스크립트 연습하기
+
+type vs interface
+
+- https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c
+- https://joonsungum.github.io/post/2019-02-25-typescript-interface-and-type-alias/
+
+### 8-2. 리액트 컴포넌트 타입스크립트
+
+function 키워드를 이용하여 함수형 컴포넌트를 선언하는 이유
+
+- https://overreacted.io/a-complete-guide-to-useeffect/
+- https://kentcdodds.com/blog/how-to-use-react-context-effectively
+
+tips about typescript with react
+
+- https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680#78b9 (2018 ver)
+
+### 8-3. 타입스크립트로 리액트 상태관리하기
+
+- useState를 사용 할 때 Generics 를 사용하지 않아도 알아서 타입을 유추하기 때문에 생략해도 상관없는 경우가 있으나, 상태가 `null` 일 수도 있고 아닐 수도 있을 때 Generics 를 활용하면 좋다.
+
+```
+type Information = { name: string, description: string };
+const [info, setInformation] = useState<Information | null>(null);
+```
+
+### 8-5. 타입스크립트로 리덕스 프로처럼 작성하기
+
+- as const 이해못함.
