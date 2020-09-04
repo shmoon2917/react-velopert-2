@@ -54,25 +54,14 @@ https://yeun.github.io/open-color/
 
 # 8장. Typescript 사용하기
 
-### 8-1. 타입스크립트 연습하기
+### 추가 학습
 
-type vs interface
+- https://kjwsx23.tistory.com/448
+- (TS handbook 한글 문서) https://typescript-kr.github.io/pages/tutorials/typescript-in-5-minutes.html
 
-- https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c
-- https://joonsungum.github.io/post/2019-02-25-typescript-interface-and-type-alias/
+### Tips
 
-### 8-2. 리액트 컴포넌트 타입스크립트
-
-function 키워드를 이용하여 함수형 컴포넌트를 선언하는 이유
-
-- https://overreacted.io/a-complete-guide-to-useeffect/
-- https://kentcdodds.com/blog/how-to-use-react-context-effectively
-
-tips about typescript with react
-
-- https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680#78b9 (2018 ver)
-
-### 8-3. 타입스크립트로 리액트 상태관리하기
+**useState 사용 시 Generics 적용**
 
 - useState를 사용 할 때 Generics 를 사용하지 않아도 알아서 타입을 유추하기 때문에 생략해도 상관없는 경우가 있으나, 상태가 `null` 일 수도 있고 아닐 수도 있을 때 Generics 를 활용하면 좋다.
 
@@ -81,7 +70,30 @@ type Information = { name: string, description: string };
 const [info, setInformation] = useState<Information | null>(null);
 ```
 
-### 8-5. 타입스크립트로 리덕스 프로처럼 작성하기
+**10++ TypeScript tips/patterns with React**
+
+- https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680#78b9 (2018 ver)
+
+### QnA
+
+- [x] **type vs interface**
+- https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c
+- https://joonsungum.github.io/post/2019-02-25-typescript-interface-and-type-alias/
+- 공식 문서에서는 interface 를 주로 사용하되, tuple 이나 union 타입을 사용해야 할 경우 type Alias 를 사용하라고 한다.
+
+- [x] **as const(const assertion)**
+      https://medium.com/@seungha_kim_IT/typescript-3-4-const-assertion-b50a749dd53b
+
+**function 키워드를 이용하여 함수형 컴포넌트를 선언하는 이유**
+
+- https://overreacted.io/a-complete-guide-to-useeffect/
+- https://kentcdodds.com/blog/how-to-use-react-context-effectively
+
+### Issue
+
+**(eslint 이슈) https://github.com/facebook/create-react-app/issues/9515**
+
+- react-scripts 라이브러리의 eslint 버전이 낮아서 발생하는 문제로 보임. typescript 버전 낮추면서 일단 해결
 
 - as const 이해못함.
 
@@ -98,8 +110,6 @@ const [info, setInformation] = useState<Information | null>(null);
 - axios 또한 타입스크립트 지원이 공식적으로 되므로 @types/axios 를 설치하실 필요가 없다.
 
 - https://app.quicktype.io/?l=ts (Quicktype -> json 을 바로 타입스크립트 인터페이스로 변환)
-
-- (eslint 이슈) https://github.com/facebook/create-react-app/issues/9515
 
 - (참고) https://vallista.kr/2020/07/20/TypeScript%EC%97%90%EC%84%9C-Redux-Redux-Saga-%EC%95%84%EB%A6%84%EB%8B%B5%EA%B2%8C-%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0/
 
