@@ -84,3 +84,17 @@ const [info, setInformation] = useState<Information | null>(null);
 ### 8-5. 타입스크립트로 리덕스 프로처럼 작성하기
 
 - as const 이해못함.
+
+- 액션에 부가적으로 필요한 값을 payload 라는 이름으로 통일. 이는 FSA (https://github.com/redux-utilities/flux-standard-action) 라는 규칙인데 이 규칙을 적용하면 액션들이 모두 비슷한 구조로 이루어져있게 되어 추후 다룰 때도 편하고 읽기 쉽고, 액션 구조를 일반화함으로써 액션에 관련돤 라이브러리를 사용 할 수 있게 해줌.
+
+- typesafe-actions
+  (docs https://github.com/piotrwitek/typesafe-actions)
+  (v5.0 https://github.com/piotrwitek/typesafe-actions/issues/143)
+  (활용하기 https://velog.io/@goonerholic/typesafe-actions-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0-7y6ijtqg)
+
+### 8-6. 타입스크립트에서 리덕스 미들웨어 사용하기
+
+- redux-thunk는 공식적으로 타입스크립트 지원이 되므로 @types/redux-thunk 를 따로 설치하실 필요 없다.
+- axios 또한 타입스크립트 지원이 공식적으로 되므로 @types/axios 를 설치하실 필요가 없다.
+
+- https://app.quicktype.io/?l=ts (Quicktype -> json 을 바로 타입스크립트 인터페이스로 변환)

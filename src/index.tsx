@@ -1,35 +1,34 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import rootReducer from "./ch8/modules";
-// import logger from "redux-logger";
-// import ReduxThunk from "redux-thunk";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './ch8/modules';
+import logger from 'redux-logger';
+// import ReduxThunk from 'redux-thunk';
 // import { Router } from "react-router-dom";
 // import { createBrowserHistory } from "history";
-// import createSagaMiddleware from "redux-saga";
+import createSagaMiddleware from 'redux-saga';
+import { rootSaga } from './ch8/modules';
 
 // const customHistory = createBrowserHistory();
-// const sagaMiddleware = createSagaMiddleware({
-//   context: {
-//     history: customHistory,
-//   },
-// });
+const sagaMiddleware = createSagaMiddleware();
+// context: {
+//   history: customHistory,
+// },
 
-// const store = createStore(
-//   rootReducer,
-//   applyMiddleware(
-//     ReduxThunk.withExtraArgument({ history: customHistory }),
-//     sagaMiddleware,
-//     logger
-//   )
-// );
-const store = createStore(rootReducer);
+const store = createStore(
+  rootReducer,
+  applyMiddleware(
+    // ReduxThunk,
+    sagaMiddleware,
+    logger
+  )
+);
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   // <Router history={customHistory}>
@@ -37,7 +36,7 @@ ReactDOM.render(
     <App />
   </Provider>,
   // </Router>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
