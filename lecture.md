@@ -59,7 +59,7 @@ https://yeun.github.io/open-color/
 - https://kjwsx23.tistory.com/448
 - (TS handbook 한글 문서) https://typescript-kr.github.io/pages/tutorials/typescript-in-5-minutes.html
 
-### Tips
+## Tips
 
 **useState 사용 시 Generics 적용**
 
@@ -74,22 +74,21 @@ const [info, setInformation] = useState<Information | null>(null);
 
 - https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680#78b9 (2018 ver)
 
-### QnA
+## QnA
 
 - [x] **type vs interface**
 - https://medium.com/@martin_hotell/interface-vs-type-alias-in-typescript-2-7-2a8f1777af4c
 - https://joonsungum.github.io/post/2019-02-25-typescript-interface-and-type-alias/
 - 공식 문서에서는 interface 를 주로 사용하되, tuple 이나 union 타입을 사용해야 할 경우 type Alias 를 사용하라고 한다.
-
+  <br />
 - [x] **as const(const assertion)**
-      https://medium.com/@seungha_kim_IT/typescript-3-4-const-assertion-b50a749dd53b
-
-**function 키워드를 이용하여 함수형 컴포넌트를 선언하는 이유**
-
+- https://medium.com/@seungha_kim_IT/typescript-3-4-const-assertion-b50a749dd53b
+  <br />
+- []**function 키워드를 이용하여 함수형 컴포넌트를 선언하는 이유**
 - https://overreacted.io/a-complete-guide-to-useeffect/
 - https://kentcdodds.com/blog/how-to-use-react-context-effectively
 
-### Issue
+## Issue
 
 **(eslint 이슈) https://github.com/facebook/create-react-app/issues/9515**
 
