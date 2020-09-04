@@ -15,7 +15,7 @@ const createAsyncThunk = <
   const thunk = (...params: Params) => {
     return async (dispatch: Dispatch) => {
       const { request, success, failure } = asyncActionCreator;
-      dispatch(request(undefined));
+      dispatch(request());
       try {
         const result = await promiseCreator(...params);
         dispatch(success(result));

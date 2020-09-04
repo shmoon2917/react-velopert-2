@@ -98,3 +98,11 @@ const [info, setInformation] = useState<Information | null>(null);
 - axios 또한 타입스크립트 지원이 공식적으로 되므로 @types/axios 를 설치하실 필요가 없다.
 
 - https://app.quicktype.io/?l=ts (Quicktype -> json 을 바로 타입스크립트 인터페이스로 변환)
+
+- (eslint 이슈) https://github.com/facebook/create-react-app/issues/9515
+
+- (참고) https://vallista.kr/2020/07/20/TypeScript%EC%97%90%EC%84%9C-Redux-Redux-Saga-%EC%95%84%EB%A6%84%EB%8B%B5%EA%B2%8C-%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0/
+
+- (타입스크립트 - 고급 타입) https://velog.io/@zeros0623/TypeScript-%EA%B3%A0%EA%B8%89-%ED%83%80%EC%9E%85
+
+- `type Params = Parameters<F>;` 는 함수의 파라미터들의 타입을 추론해줌. 이를 통하여 F 함수의 파라미터와 thunk 함수의 파라미터가 동일하게끔 설정을 해줄 수 있다.

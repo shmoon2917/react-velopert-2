@@ -31,8 +31,6 @@ const initialState: CounterState = {
 
 // 메서드 체이닝 방식으로 작성
 // 리듀서를 만듭니다
-// 상태의 타입은 initialState 를 참조하여 바로 유추 할 수 있고,
-// 액션 객체의 타입은 액션 생성함수를 참조하여 유추 할 수 있기 때문에 Generics를 생략해도 무방합니다.
 const counter = createReducer<CounterState, CounterAction>(initialState)
   .handleAction(increase, (state) => ({ count: state.count + 1 }))
   .handleAction(decrease, (state) => ({ count: state.count - 1 }))

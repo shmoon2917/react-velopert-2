@@ -31,6 +31,14 @@ export const asyncState = {
 };
 
 type AnyAsyncActionCreator = AsyncActionCreatorBuilder<any, any, any>;
+
+export const transformToArray = <AC extends AnyAsyncActionCreator>(
+  asyncActionCreator: AC
+) => {
+  const { request, success, failure } = asyncActionCreator;
+  return [request, success, failure];
+};
+
 export const createAsyncReducer = <
   S,
   AC extends AnyAsyncActionCreator,
@@ -41,11 +49,9 @@ export const createAsyncReducer = <
 ) => {
   return (state: S, action: AnyAction) => {
     // 각 액션 생성함수의 type 추출
-    const [request, success, failure] = [
-      asyncActionCreator.request,
-      asyncActionCreator.success,
-      asyncActionCreator.failure,
-    ].map(getType);
+    const [request, success, failure] = transformToArray(
+      asyncActionCreator
+    ).map(getType);
     switch (action.type) {
       case request:
         return {
@@ -66,11 +72,4 @@ export const createAsyncReducer = <
         return state;
     }
   };
-};
-
-export const transformToArray = <AC extends AnyAsyncActionCreator>(
-  asyncActionCreator: AC
-) => {
-  const { request, success, failure } = asyncActionCreator;
-  return [request, success, failure];
 };

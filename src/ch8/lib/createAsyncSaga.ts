@@ -16,6 +16,8 @@ function isPayloadAction<P>(action: any): action is PayloadAction<string, P> {
   return action.payload !== undefined;
 }
 
+// AsyncActionCreatorBuilder generic
+// <[RequestType, [payload, meta]],'', ''>
 export default function createAsyncSaga<T1, P1, T2, P2, T3, P3>(
   asyncActionCreator: AsyncActionCreatorBuilder<
     [T1, [P1, undefined]],
