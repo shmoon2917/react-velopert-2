@@ -1,54 +1,60 @@
-# (참고할만한 블로그)
+# 참고할 만한 블로그
 
-https://helloinyong.tistory.com/
+- https://helloinyong.tistory.com/
 
-https://velog.io/@velopert
+- https://velog.io/@velopert
+
+---
 
 # 2장 style 처리
 
-## CSS3 Flexible 개념
+### 추가 학습
 
-https://heropy.blog/2018/11/24/css-flexible-box/
+- [ ] **(CSS3 Flexible 개념)**
 
-## open color
+- https://heropy.blog/2018/11/24/css-flexible-box/
 
-https://yeun.github.io/open-color/
+### Tips
 
-(참고)
+- [x] **(Open Color)**
 
-- ThemeProvider 내부는 하나의 리액트 엘리먼트로 감싸져있어야 하기 때문에 AppBlock 과 Dialog 를 <></> 으로 감싸주어야 한다.
+- https://yeun.github.io/open-color/
 
 ---
 
 # 4장. API 연동하기
 
-### 4-1. API 연동의 기본
+### 추가 학습
 
-- (참고) REST API: https://meetup.toast.com/posts/92 / https://medium.com/@dydrlaks/rest-api-3e424716bab
+- [ ] **(REST API)**
 
-### 4-2. useReducer 로 요청 상태 관리하기
-
-- `useState` 대신에 `useReducer` 를 사용하여 요청 상태들을 관리하려 함.
+- https://meetup.toast.com/posts/92
+- https://medium.com/@dydrlaks/rest-api-3e424716bab
 
 ---
 
 # 6장. Redux
 
-### 6-4. 리덕스 모듈 만들기
+### Tips
 
-- (Ducks 패턴) https://github.com/erikras/ducks-modular-redux
+- [x] **(FSA)**
+
+- https://github.com/redux-utilities/flux-standard-action
+- 이 규칙을 적용하면 액션들이 모두 비슷한 구조로 이루어져있게 되어 추후 다룰 때도 편하고 읽기 쉽고, 액션 구조를 일반화함으로써 액션에 관련돤 라이브러리를 사용 할 수 있게 해줌.
+
+- [ ] **(Ducks 패턴)**
+
+- https://github.com/erikras/ducks-modular-redux
 
 ---
 
 # 7장. Redux middleware
 
-### 7-7. thunk 에서 라우터 연동하기
+### QnA
 
-- 왜 Router 에서만 가능한가. BrowserRouter에서는 왜 history props 로 넘겨서 작동하지 않는가
+- [ ] 왜 Router 에서만 가능한가. BrowserRouter에서는 왜 history props 로 넘겨서 작동하지 않는가
 
-### 7-9. CORS 와 Webpack Devserver Proxy
-
-- 이해가 부족함
+- [ ] CORS 와 Webpack DevServer Proxy
 
 ---
 
@@ -62,9 +68,6 @@ https://yeun.github.io/open-color/
   - (docs) https://github.com/piotrwitek/typesafe-actions)
   - (v5.0) https://github.com/piotrwitek/typesafe-actions/issues/143
   - (예제) https://vallista.kr/2020/07/20/TypeScript%EC%97%90%EC%84%9C-Redux-Redux-Saga-%EC%95%84%EB%A6%84%EB%8B%B5%EA%B2%8C-%EA%B0%9C%EB%B0%9C%ED%95%98%EA%B8%B0/
-- **(FSA)**
-  - https://github.com/redux-utilities/flux-standard-action
-  - 이 규칙을 적용하면 액션들이 모두 비슷한 구조로 이루어져있게 되어 추후 다룰 때도 편하고 읽기 쉽고, 액션 구조를 일반화함으로써 액션에 관련돤 라이브러리를 사용 할 수 있게 해줌.
 
 ## Tips
 
